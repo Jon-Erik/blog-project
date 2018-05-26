@@ -14,6 +14,10 @@ var exphbs = require("express-handlebars");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+//Use static public files for css, js
+app.use(express.static(__dirname + "/public"));
+app.use(express.static("."));
+
 //middleware for authentication initialized with passport: passport, express 
 //session, and passport session
 app.use(session({
